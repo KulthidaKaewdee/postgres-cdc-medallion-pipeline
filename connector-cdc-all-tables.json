@@ -1,0 +1,23 @@
+{
+  "name": "postgres-cdc-all-tables",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+
+    "database.hostname": "postgres-cdc-mel",
+    "database.port": "5432",
+    "database.user": "debezium",
+    "database.password": "dbzium123",
+    "database.dbname": "data",
+
+    "topic.prefix": "pg_data",
+
+    "table.include.list": "public.customers,public.orders,public.items,public.payments,public.shippings",
+
+    "plugin.name": "pgoutput",
+    "slot.name": "debezium_all_tables_slot",
+    "publication.autocreate.mode": "filtered",
+
+    "snapshot.mode": "initial"
+  }
+}
