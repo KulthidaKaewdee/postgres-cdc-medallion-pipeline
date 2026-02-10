@@ -55,12 +55,12 @@ docker compose up -d
 ### 2. PostgreSQL Source Setup
 เข้าไปสร้าง User และกำหนดสิทธิ์สำหรับการทำ Replication ภายใน Container
 
-# เข้าสู่ Postgres Container
+เข้าสู่ Postgres Container
 ```bash
 docker exec -it postgres-cdc-mel psql -U admin -d data
 ```
 
-# ตั้งค่าสิทธิ์สำหรับ Debezium
+ตั้งค่าสิทธิ์สำหรับ Debezium
 ```sql
 CREATE ROLE debezium LOGIN PASSWORD 'dbzium123' REPLICATION;
 GRANT SELECT ON ALL TABLES IN SCHEMA public TO debezium;
@@ -70,14 +70,14 @@ ALTER TABLE public.orders OWNER TO debezium;
 ### 3. Debezium Connector Installation
 ติดตั้ง Connector ผ่าน REST API เพื่อเริ่มกระบวนการ CDC จากทุกตาราง
 
-# ติดตั้ง Connector
+ติดตั้ง Connector
 ```bash
 curl -X POST http://localhost:8083/connectors \
 -H "Content-Type: application/json" \
 -d @connector-cdc-all-tables.json
 ```
 
-# ตรวจสอบสถานะ (ต้องขึ้น 'RUNNING')
+ตรวจสอบสถานะ (ต้องขึ้น 'RUNNING')
 ```bash
 curl http://localhost:8083/connectors/postgres-cdc-all-tables/status
 ```
