@@ -1,6 +1,6 @@
 # Spark Jobs (Data Processing Layer)
 
-Repo นี้รวบรวม PySpark Scripts สำหรับประมวลผลข้อมูลใน Data Lakehouse ตามสถาปัตยกรรม Medallion Architecture (Bronze -> Silver -> Gold)
+ไดเรกทอรีนี้นี้รวบรวม PySpark Scripts สำหรับประมวลผลข้อมูลใน Data Lakehouse ตามสถาปัตยกรรม Medallion Architecture (Bronze -> Silver -> Gold)
 
 ---
 
