@@ -40,6 +40,12 @@
 * **Serving:** จัดเก็บข้อมูลใน ClickHouse พร้อมให้ Power BI ดึงไปสร้าง Dashboard
 
 ---
+## Dashboard
+![executive-overview-report](https://github.com/KulthidaKaewdee/postgres-cdc-medallion-pipeline/blob/main/executive-overview-report.png)
+![customer&26geography-report](https://github.com/KulthidaKaewdee/postgres-cdc-medallion-pipeline/blob/main/customer%26geography-report.png)
+![product-analytics-report](https://github.com/KulthidaKaewdee/postgres-cdc-medallion-pipeline/blob/main/product-analytics-report.png)
+
+---
 
 ## Getting Started
 
