@@ -1,10 +1,14 @@
-# PostgreSQL CDC Medallion Pipeline 🚀
+# PostgreSQL CDC Medallion Pipeline
 
 โปรเจ็คนี้คือการสร้าง **Data Lakehouse** ที่สมบูรณ์แบบโดยใช้สถาปัตยกรรม **Medallion Architecture** (Bronze, Silver, Gold) เพื่อจัดการข้อมูลแบบ **Near Real-time** โดยใช้เทคนิค **Change Data Capture (CDC)** เพื่อดึงข้อมูลการเปลี่ยนแปลงจาก PostgreSQL ส่งผ่าน Kafka และประมวลผลด้วย Spark เพื่อนำไปใช้งานวิเคราะห์บน ClickHouse และ Power BI
 
 ---
+### System Architecture
+![System Architecture](https://github.com/KulthidaKaewdee/postgres-cdc-medallion-pipeline/blob/main/system%20architecture.jpg)
 
-## 🏗️ Architecture & Technology Stack
+---
+
+## Architecture & Technology Stack
 
 ระบบทำงานในรูปแบบ Containerized บน Docker Compose โดยแบ่งหน้าที่ของแต่ละเทคโนโลยีดังนี้:
 
@@ -18,7 +22,7 @@
 
 ---
 
-## 💎 Medallion Architecture Details
+## Medallion Architecture Details
 
 ### 1. Bronze Layer (Raw Data)
 * **Ingestion:** รับข้อมูลจาก Kafka Topic (Avro) และ Decode ด้วย Schema Registry
@@ -37,7 +41,7 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Build Image & Start Services
 สร้าง Custom Spark Image เพื่อรวม Dependencies (S3A, Avro, JDBC) และเริ่มรันระบบทั้งหมด
