@@ -31,9 +31,3 @@
 1. **Airflow** เชื่อมต่อ SSH ไปยังเครื่อง Host (ผ่าน Connection ID: `ssh_ssbeat_host`)
 2. **Host** รับคำสั่งแล้วส่งต่อให้ Docker ผ่านคำสั่ง `docker exec spark-master ...`
 3. **Spark Master** เริ่มต้นทำงาน `spark-submit` โดยดึงไฟล์ Python จาก Volume ที่เมาท์ไว้ (`/opt/spark/jobs/`)
-
----
-
-## Testing Scripts
-**File:** `test-bigquery.py`
-* สคริปต์ทดสอบการเชื่อมต่อ Spark กับ BigQuery (Standalone Test) ไม่ได้ถูกเรียกใช้ใน Pipeline หลัก
