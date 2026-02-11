@@ -1,4 +1,4 @@
-# 🛠️ Spark Custom Image (Dependencies Management)
+# Spark Custom Image (Dependencies Management)
 
 โฟลเดอร์นี้บรรจุไฟล์สำหรับการสร้าง **Custom Spark Image** เพื่อจัดการ Library เสริมทั้งหมดที่จำเป็นต้องใช้ใน Pipeline เช่น Connector สำหรับ Kafka, Avro, และ MinIO โดยใช้กลยุทธ์ **Multi-stage Build** เพื่อให้ Image มีขนาดเล็กและทำงานได้รวดเร็วที่สุด
 
