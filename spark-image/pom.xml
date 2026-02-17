@@ -1,0 +1,75 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>spark-dependencies</artifactId>
+    <version>1.0.0</version>
+
+    <repositories>
+        <repository>
+            <id>confluent</id>
+            <url>https://packages.confluent.io/maven/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+
+        <!-- Spark BigQuery Connector -->
+        <dependency>
+            <groupId>com.google.cloud.spark</groupId>
+            <artifactId>spark-bigquery-with-dependencies_2.12</artifactId> <!-- รวม dependency ของ Google มาให้ครบ -->
+            <version>0.36.1</version>
+        </dependency>
+
+        <!-- S3A / MinIO -->
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>3.3.4</version>
+            </dependency>
+
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-bundle</artifactId>
+            <version>1.12.262</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql-kafka-0-10_2.12</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-avro_2.12</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-aws</artifactId>
+            <version>3.3.4</version>
+            <exclusions>
+                <exclusion><groupId>org.apache.hadoop</groupId><artifactId>hadoop-common</artifactId></exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>io.confluent</groupId>
+            <artifactId>kafka-schema-registry-client</artifactId>
+            <version>7.7.7</version>
+            <exclusions>
+                <exclusion><groupId>org.scala-lang</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>org.scala-lang.modules</groupId><artifactId>*</artifactId></exclusion> 
+                <exclusion><groupId>org.apache.kafka</groupId><artifactId>kafka-clients</artifactId></exclusion>
+                <exclusion><groupId>org.slf4j</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>com.fasterxml.jackson.core</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>com.fasterxml.jackson.databind</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>com.fasterxml.jackson.module</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>com.fasterxml.jackson.dataformat</groupId><artifactId>*</artifactId></exclusion>
+                <exclusion><groupId>javax.ws.rs</groupId><artifactId>*</artifactId></exclusion>
+            </exclusions>
+        </dependency>
+        
+        </dependencies>
+</project>
